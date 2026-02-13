@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RRios Engenharia | Área do Cliente</title>
+
+  <link rel="stylesheet" href="Stylelgin.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <main class="login-page" aria-label="Página de login">
+    <section class="login-box" aria-label="Área do cliente">
+      <header class="login-header">
+        <img src="images/Logo2.png" alt="Logotipo RRios Engenharia" class="login-logo">
+        <div class="login-title">
+          <h1>Área do Cliente</h1>
+          <p>Acesse sua conta para continuar</p>
+        </div>
+      </header>
+
+      <form class="login-form" novalidate>
+        <div class="field">
+          <input type="text" id="usuario" name="usuario" autocomplete="username" required placeholder=" " />
+          <label for="usuario">Usuário</label>
+        </div>
+
+        <div class="field field-password">
+          <input type="password" id="senha" name="senha" autocomplete="current-password" required placeholder=" " />
+          <label for="senha">Senha</label>
+
+          <button class="toggle-pass" type="button" aria-label="Mostrar senha" aria-pressed="false">
+            Mostrar
+          </button>
+        </div>
+
+        <div class="row">
+          <label class="check">
+            <input type="checkbox" id="rememberUser" />
+            <span>Lembrar usuário</span>
+          </label>
+        </div>
+
+        <button type="submit" class="primary-btn">
+          <span class="btn-text">Entrar</span>
+          <span class="btn-spinner" aria-hidden="true"></span>
+        </button>
+
+        <span class="login-error" id="loginError" role="status" aria-live="polite"></span>
+      </form>
+
+      <footer class="login-footer">
+        <a href="index.html" class="back-link">← Voltar ao site</a>
+        <span class="footnote">© RRios Engenharia LTDA</span>
+      </footer>
+    </section>
+  </main>
+
+  <script src="login.js"></script>
+</body>
+</html>
