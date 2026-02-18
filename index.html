@@ -5,14 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RRios Engenharia | Portfólio</title>
 
-  <link rel="stylesheet" href="Style.css" />
+  <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <!-- PROGRESS BAR TOP -->
+
+  <!-- barra de progresso do scroll (se estiver usando no JS) -->
   <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
   <header class="main-header">
@@ -29,6 +30,7 @@
 
       <div class="header-center">
         <a href="index.html" aria-label="Ir para a página inicial">
+          <!-- mantém o carregamento da imagem (mesmo src) -->
           <img src="images/Logo2.png" alt="Logotipo RRios Engenharia" class="logo-nav">
         </a>
       </div>
@@ -37,10 +39,6 @@
         <button class="search-container" id="btnSearch" aria-label="Pesquisar projetos" type="button">
           <span class="search-icon" aria-hidden="true">🔍</span>
           <span class="search-text">Pesquisar</span>
-        </button>
-
-        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Alternar tema">
-          <span aria-hidden="true">🌙</span>
         </button>
 
         <a href="login.html" class="login-button" aria-label="Acessar área do cliente">Área do Cliente</a>
@@ -53,6 +51,7 @@
   <aside class="side-menu" id="sideMenu" aria-hidden="true">
     <div class="side-menu__panel" role="dialog" aria-modal="true" aria-label="Menu">
       <div class="side-menu__top">
+        <!-- mantém o carregamento da imagem (mesmo src) -->
         <img src="images/Logo.png" alt="RRios Engenharia" class="side-menu__logo">
         <button class="icon-btn" id="btnCloseMenu" type="button" aria-label="Fechar menu">✕</button>
       </div>
@@ -70,7 +69,7 @@
     </div>
   </aside>
 
-  <!-- BUSCA (MELHORADA) -->
+  <!-- BUSCA -->
   <aside class="search-modal" id="searchModal" aria-hidden="true">
     <div class="search-modal__panel" role="dialog" aria-modal="true" aria-label="Pesquisar">
       <div class="search-modal__top">
@@ -93,6 +92,8 @@
       </div>
 
       <div class="search-status" id="searchStatus" aria-live="polite"></div>
+
+      <!-- IMPORTANTE: seu JS pode preencher com <li class="search-item"> -->
       <ul class="search-results" id="searchResults" role="listbox" aria-label="Resultados"></ul>
 
       <p class="search-modal__hint">Dica: use palavras como “BIM”, “laudo”, “planejamento”, “estrutura”.</p>
@@ -101,20 +102,22 @@
 
   <main class="viewport">
 
-    <!-- HERO -->
-    <section class="hero" aria-label="Apresentação">
+    <!-- HERO (sem alterar carregamento de imagens, usa fundo via CSS) -->
+    <section class="hero reveal" aria-label="Apresentação">
       <div class="hero__bg" aria-hidden="true"></div>
-      <div class="hero__content reveal">
+      <div class="hero__content">
         <span class="hero__badge">Engenharia com foco em qualidade, prazo e segurança</span>
-        <h1>Projetos e soluções técnicas que transformam ideias em obras bem executadas.</h1>
+        <h1>Projetos e soluções técnicas para obras bem executadas.</h1>
         <p>
-          Estruturas, laudos, planejamento e inovação. Atendimento próximo, documentação completa e entregas com padrão profissional.
+          Estruturas, laudos, planejamento e inovação. Atendimento próximo, documentação clara e suporte do início ao fim.
         </p>
+
         <div class="hero__actions">
           <a class="btn btn-primary" href="#contato">Solicitar orçamento</a>
           <a class="btn btn-ghost" href="#destaques">Ver portfólio</a>
         </div>
-        <div class="hero__mini">
+
+        <div class="hero__mini" aria-label="Diferenciais">
           <div class="mini-pill">✔ ART/RT</div>
           <div class="mini-pill">✔ BIM / Compatibilização</div>
           <div class="mini-pill">✔ Laudos e vistorias</div>
@@ -144,39 +147,36 @@
       </div>
     </section>
 
-    <!-- ÁREAS -->
+    <!-- ÁREAS (PNG 1, 2, 3) - mantém carregamento -->
     <section class="gallery" id="atuacao" aria-label="Áreas de atuação">
 
       <article class="card reveal" data-projeto="engenharia-civil" tabindex="0" role="button" aria-label="Abrir Engenharia Civil">
         <img src="images/1.png" alt="Engenharia Civil">
         <div class="content">
-          <h3>Engenharia Civil</h3>
+          <h2>Engenharia Civil</h2>
           <p>Projetos, detalhamento e suporte técnico com documentação clara.</p>
-          <span class="card__more">Ver detalhes →</span>
         </div>
       </article>
 
       <article class="card reveal" data-projeto="inovacao" tabindex="0" role="button" aria-label="Abrir Inovação">
         <img src="images/2.png" alt="Inovação">
         <div class="content">
-          <h3>Inovação</h3>
-          <p>BIM, compatibilização, modelagem e padronização de entregas.</p>
-          <span class="card__more">Ver detalhes →</span>
+          <h2>Inovação</h2>
+          <p>BIM, compatibilização e padronização de entregas.</p>
         </div>
       </article>
 
       <article class="card reveal" data-projeto="planejamento" tabindex="0" role="button" aria-label="Abrir Planejamento">
         <img src="images/3.png" alt="Planejamento">
         <div class="content">
-          <h3>Planejamento</h3>
-          <p>Cronogramas, medições, orçamento e apoio à tomada de decisão.</p>
-          <span class="card__more">Ver detalhes →</span>
+          <h2>Planejamento</h2>
+          <p>Cronograma, medições, orçamento e acompanhamento.</p>
         </div>
       </article>
 
     </section>
 
-    <!-- PROJETOS EM DESTAQUE -->
+    <!-- PROJETOS EM DESTAQUE (mantém ids p/ seu JS) -->
     <section class="featured" id="destaques" aria-label="Projetos em destaque">
       <div class="featured__header reveal">
         <div>
@@ -189,31 +189,37 @@
         </a>
       </div>
 
+      <!-- seu script provavelmente cria .project-card aqui -->
       <div class="featured__grid" id="featuredGrid" aria-live="polite"></div>
     </section>
 
     <!-- PROCESSO -->
     <section class="process reveal" id="processo" aria-label="Como trabalhamos">
       <h2>Como trabalhamos</h2>
-      <p class="muted">Um fluxo simples, transparente e com checkpoints.</p>
+      <p style="margin-top:10px; color: rgba(0,51,102,0.78); line-height:1.6;">
+        Um fluxo simples, transparente e com checkpoints para garantir qualidade e previsibilidade.
+      </p>
 
-      <div class="timeline">
-        <div class="step">
+      <div class="timeline" role="list" aria-label="Etapas do processo">
+        <div class="step" role="listitem">
           <div class="step__dot" aria-hidden="true"></div>
           <h3>1) Briefing</h3>
-          <p>Entendimento do problema, coleta de dados e visita técnica quando necessário.</p>
+          <p>Entendimento do problema, levantamento de dados e visita técnica quando necessário.</p>
         </div>
-        <div class="step">
+
+        <div class="step" role="listitem">
           <div class="step__dot" aria-hidden="true"></div>
           <h3>2) Planejamento</h3>
-          <p>Definição do escopo, prazos, entregáveis e requisitos normativos.</p>
+          <p>Escopo, prazos, entregáveis e requisitos normativos definidos com clareza.</p>
         </div>
-        <div class="step">
+
+        <div class="step" role="listitem">
           <div class="step__dot" aria-hidden="true"></div>
           <h3>3) Desenvolvimento</h3>
-          <p>Modelagem, cálculos, desenhos e revisões com rastreabilidade.</p>
+          <p>Modelagem, cálculos, detalhamento e revisões com rastreabilidade.</p>
         </div>
-        <div class="step">
+
+        <div class="step" role="listitem">
           <div class="step__dot" aria-hidden="true"></div>
           <h3>4) Entrega</h3>
           <p>Documentação final, orientação técnica e suporte pós-entrega.</p>
@@ -229,7 +235,7 @@
         <article class="tcard">
           <p>“Entregaram no prazo e com documentação impecável. A obra fluiu sem retrabalho.”</p>
           <div class="tcard__meta">
-            <strong>Cliente A</strong><span>• Obras residenciais</span>
+            <strong>Cliente A</strong><span>• Residencial</span>
           </div>
         </article>
 
@@ -241,7 +247,7 @@
         </article>
 
         <article class="tcard">
-          <p>“BIM e compatibilização salvaram nosso cronograma. Excelente trabalho.”</p>
+          <p>“Compatibilização ajudou no cronograma. Excelente trabalho.”</p>
           <div class="tcard__meta">
             <strong>Cliente C</strong><span>• Comercial</span>
           </div>
@@ -255,7 +261,7 @@
 
       <details class="faq__item">
         <summary>Vocês emitem ART/RRT?</summary>
-        <p>Sim. Emitimos conforme o tipo de serviço e exigências do conselho competente.</p>
+        <p>Sim. Emitimos conforme o tipo de serviço e as exigências do conselho competente.</p>
       </details>
 
       <details class="faq__item">
@@ -269,7 +275,7 @@
       </details>
     </section>
 
-    <!-- QUEM SOMOS -->
+    <!-- QUEM SOMOS (seu texto original) -->
     <section class="extra-content reveal" id="quem-somos">
       <h2>Quem somos</h2>
       <p>
@@ -283,16 +289,19 @@
     <!-- CONTATO -->
     <section class="contact reveal" id="contato" aria-label="Contato">
       <div class="contact__grid">
+
         <div>
-          <h2>Vamos conversar?</h2>
-          <p class="muted">Envie uma mensagem. Responderemos o quanto antes.</p>
+          <h2 style="font-weight:900; font-size:1.7rem;">Vamos conversar?</h2>
+          <p style="margin-top:10px; color: rgba(0,51,102,0.78); line-height:1.6;">
+            Conte o que você precisa e retornaremos o quanto antes.
+          </p>
 
           <div class="contact__cards">
             <div class="cinfo">
               <div class="cinfo__icon" aria-hidden="true">📍</div>
               <div>
                 <strong>Atendimento</strong>
-                <p>Brasil • Remoto e presencial</p>
+                <p style="margin-top:6px; color: rgba(0,51,102,0.74);">Brasil • Remoto e presencial</p>
               </div>
             </div>
 
@@ -300,7 +309,7 @@
               <div class="cinfo__icon" aria-hidden="true">⏱️</div>
               <div>
                 <strong>Horário</strong>
-                <p>Seg–Sex • 08:00–18:00</p>
+                <p style="margin-top:6px; color: rgba(0,51,102,0.74);">Seg–Sex • 08:00–18:00</p>
               </div>
             </div>
 
@@ -308,7 +317,7 @@
               <div class="cinfo__icon" aria-hidden="true">✉️</div>
               <div>
                 <strong>E-mail</strong>
-                <p>contato@rriosengenharia.com</p>
+                <p style="margin-top:6px; color: rgba(0,51,102,0.74);">contato@rriosengenharia.com</p>
               </div>
             </div>
           </div>
@@ -319,15 +328,21 @@
             Nome
             <input type="text" placeholder="Seu nome" required>
           </label>
-          <label>
+
+          <label style="margin-top:12px;">
             E-mail
             <input type="email" placeholder="seuemail@exemplo.com" required>
           </label>
-          <label>
+
+          <label style="margin-top:12px;">
             Mensagem
             <textarea rows="5" placeholder="Conte sobre o que você precisa..." required></textarea>
           </label>
-          <button class="btn btn-primary" id="btnFakeSend" type="button">Enviar</button>
+
+          <button class="btn btn-primary" id="btnFakeSend" type="button" style="margin-top:12px; width:100%;">
+            Enviar
+          </button>
+
           <p class="form-hint">*Demonstração. Integre com WhatsApp, Formspree ou backend depois.</p>
         </form>
       </div>
@@ -335,13 +350,14 @@
 
     <footer class="footer">
       <p>© <span id="year"></span> RRios Engenharia • Todos os direitos reservados.</p>
-      <a class="footer__link" href="#destaques">Voltar para projetos</a>
     </footer>
+
   </main>
 
-  <!-- MODAL DETALHES DO PROJETO (destaques) -->
+  <!-- MODAL DETALHES DO PROJETO (mantido) -->
   <aside class="project-modal" id="projectModal" aria-hidden="true">
     <div class="project-modal__panel" role="dialog" aria-modal="true" aria-label="Detalhes do projeto">
+
       <div class="project-modal__top">
         <div class="project-modal__topText">
           <span class="pm-tag" id="pmTag"></span>
@@ -354,6 +370,7 @@
 
       <div class="project-modal__body">
         <div class="pm-gallery">
+          <!-- imagem continua vindo do seu JS (src setado no script) -->
           <img class="pm-hero" id="pmHero" alt="">
           <div class="pm-thumbs" id="pmThumbs"></div>
         </div>
@@ -369,10 +386,11 @@
           </div>
         </div>
       </div>
+
     </div>
   </aside>
 
-  <!-- FLOATING BUTTONS -->
+  <!-- Floating Buttons (se seu JS usar) -->
   <a class="fab fab-wa" href="https://wa.me/5500000000000" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
     💬
   </a>
@@ -381,4 +399,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
