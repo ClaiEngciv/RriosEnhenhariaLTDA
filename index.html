@@ -12,10 +12,6 @@
 </head>
 
 <body>
-
-  <!-- barra de progresso do scroll (se estiver usando no JS) -->
-  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
-
   <header class="main-header">
     <nav class="nav-bar" aria-label="Navegação principal">
 
@@ -30,7 +26,6 @@
 
       <div class="header-center">
         <a href="index.html" aria-label="Ir para a página inicial">
-          <!-- mantém o carregamento da imagem (mesmo src) -->
           <img src="images/Logo2.png" alt="Logotipo RRios Engenharia" class="logo-nav">
         </a>
       </div>
@@ -51,7 +46,6 @@
   <aside class="side-menu" id="sideMenu" aria-hidden="true">
     <div class="side-menu__panel" role="dialog" aria-modal="true" aria-label="Menu">
       <div class="side-menu__top">
-        <!-- mantém o carregamento da imagem (mesmo src) -->
         <img src="images/Logo.png" alt="RRios Engenharia" class="side-menu__logo">
         <button class="icon-btn" id="btnCloseMenu" type="button" aria-label="Fechar menu">✕</button>
       </div>
@@ -59,17 +53,13 @@
       <nav class="side-menu__nav" aria-label="Links do menu">
         <a href="#atuacao">Áreas de atuação</a>
         <a href="#destaques">Projetos em destaque</a>
-        <a href="#processo">Como trabalhamos</a>
-        <a href="#depoimentos">Depoimentos</a>
-        <a href="#faq">FAQ</a>
         <a href="#quem-somos">Quem somos</a>
-        <a href="#contato">Contato</a>
         <a href="login.html">Área do Cliente</a>
       </nav>
     </div>
   </aside>
 
-  <!-- BUSCA -->
+  <!-- BUSCA (MELHORADA) -->
   <aside class="search-modal" id="searchModal" aria-hidden="true">
     <div class="search-modal__panel" role="dialog" aria-modal="true" aria-label="Pesquisar">
       <div class="search-modal__top">
@@ -85,15 +75,17 @@
         autocomplete="off"
       />
 
+      <!-- chips / filtros -->
       <div class="search-tools" aria-label="Filtros de pesquisa">
         <button class="chip is-active" type="button" data-filter="all">Tudo</button>
         <button class="chip" type="button" data-filter="projects">Projetos</button>
         <button class="chip" type="button" data-filter="pages">Páginas</button>
       </div>
 
+      <!-- status acessível -->
       <div class="search-status" id="searchStatus" aria-live="polite"></div>
 
-      <!-- IMPORTANTE: seu JS pode preencher com <li class="search-item"> -->
+      <!-- resultados -->
       <ul class="search-results" id="searchResults" role="listbox" aria-label="Resultados"></ul>
 
       <p class="search-modal__hint">Dica: use palavras como “BIM”, “laudo”, “planejamento”, “estrutura”.</p>
@@ -101,84 +93,29 @@
   </aside>
 
   <main class="viewport">
-
-    <!-- HERO (sem alterar carregamento de imagens, usa fundo via CSS) -->
-    <section class="hero reveal" aria-label="Apresentação">
-      <div class="hero__bg" aria-hidden="true"></div>
-      <div class="hero__content">
-        <span class="hero__badge">Engenharia com foco em qualidade, prazo e segurança</span>
-        <h1>Projetos e soluções técnicas para obras bem executadas.</h1>
-        <p>
-          Estruturas, laudos, planejamento e inovação. Atendimento próximo, documentação clara e suporte do início ao fim.
-        </p>
-
-        <div class="hero__actions">
-          <a class="btn btn-primary" href="#contato">Solicitar orçamento</a>
-          <a class="btn btn-ghost" href="#destaques">Ver portfólio</a>
-        </div>
-
-        <div class="hero__mini" aria-label="Diferenciais">
-          <div class="mini-pill">✔ ART/RT</div>
-          <div class="mini-pill">✔ BIM / Compatibilização</div>
-          <div class="mini-pill">✔ Laudos e vistorias</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- STATS -->
-    <section class="stats reveal" aria-label="Nossos números">
-      <div class="stats__grid">
-        <div class="stat">
-          <div class="stat__num" data-count="8">0</div>
-          <div class="stat__label">anos de atuação</div>
-        </div>
-        <div class="stat">
-          <div class="stat__num" data-count="120">0</div>
-          <div class="stat__label">projetos entregues</div>
-        </div>
-        <div class="stat">
-          <div class="stat__num" data-count="35">0</div>
-          <div class="stat__label">clientes atendidos</div>
-        </div>
-        <div class="stat">
-          <div class="stat__num" data-count="98">0</div>
-          <div class="stat__label">% satisfação</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ÁREAS (PNG 1, 2, 3) - mantém carregamento -->
+    <!-- ÁREAS (PNG 1, 2, 3) -->
     <section class="gallery" id="atuacao" aria-label="Áreas de atuação">
 
-      <article class="card reveal" data-projeto="engenharia-civil" tabindex="0" role="button" aria-label="Abrir Engenharia Civil">
+      <article class="card" data-projeto="engenharia-civil" tabindex="0" role="button" aria-label="Abrir Engenharia Civil">
         <img src="images/1.png" alt="Engenharia Civil">
-        <div class="content">
-          <h2>Engenharia Civil</h2>
-          <p>Projetos, detalhamento e suporte técnico com documentação clara.</p>
-        </div>
+        <div class="content"></div>
       </article>
 
-      <article class="card reveal" data-projeto="inovacao" tabindex="0" role="button" aria-label="Abrir Inovação">
+      <article class="card" data-projeto="inovacao" tabindex="0" role="button" aria-label="Abrir Inovação">
         <img src="images/2.png" alt="Inovação">
-        <div class="content">
-          <h2>Inovação</h2>
-          <p>BIM, compatibilização e padronização de entregas.</p>
-        </div>
+        <div class="content"></div>
       </article>
 
-      <article class="card reveal" data-projeto="planejamento" tabindex="0" role="button" aria-label="Abrir Planejamento">
+      <article class="card" data-projeto="planejamento" tabindex="0" role="button" aria-label="Abrir Planejamento">
         <img src="images/3.png" alt="Planejamento">
-        <div class="content">
-          <h2>Planejamento</h2>
-          <p>Cronograma, medições, orçamento e acompanhamento.</p>
-        </div>
+        <div class="content"></div>
       </article>
 
     </section>
 
-    <!-- PROJETOS EM DESTAQUE (mantém ids p/ seu JS) -->
+    <!-- PROJETOS EM DESTAQUE -->
     <section class="featured" id="destaques" aria-label="Projetos em destaque">
-      <div class="featured__header reveal">
+      <div class="featured__header">
         <div>
           <h2>Projetos em destaque</h2>
           <p>Seleção de projetos que representam nossa atuação e padrão de entrega.</p>
@@ -189,94 +126,11 @@
         </a>
       </div>
 
-      <!-- seu script provavelmente cria .project-card aqui -->
       <div class="featured__grid" id="featuredGrid" aria-live="polite"></div>
     </section>
 
-    <!-- PROCESSO -->
-    <section class="process reveal" id="processo" aria-label="Como trabalhamos">
-      <h2>Como trabalhamos</h2>
-      <p style="margin-top:10px; color: rgba(0,51,102,0.78); line-height:1.6;">
-        Um fluxo simples, transparente e com checkpoints para garantir qualidade e previsibilidade.
-      </p>
-
-      <div class="timeline" role="list" aria-label="Etapas do processo">
-        <div class="step" role="listitem">
-          <div class="step__dot" aria-hidden="true"></div>
-          <h3>1) Briefing</h3>
-          <p>Entendimento do problema, levantamento de dados e visita técnica quando necessário.</p>
-        </div>
-
-        <div class="step" role="listitem">
-          <div class="step__dot" aria-hidden="true"></div>
-          <h3>2) Planejamento</h3>
-          <p>Escopo, prazos, entregáveis e requisitos normativos definidos com clareza.</p>
-        </div>
-
-        <div class="step" role="listitem">
-          <div class="step__dot" aria-hidden="true"></div>
-          <h3>3) Desenvolvimento</h3>
-          <p>Modelagem, cálculos, detalhamento e revisões com rastreabilidade.</p>
-        </div>
-
-        <div class="step" role="listitem">
-          <div class="step__dot" aria-hidden="true"></div>
-          <h3>4) Entrega</h3>
-          <p>Documentação final, orientação técnica e suporte pós-entrega.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- DEPOIMENTOS -->
-    <section class="testimonials reveal" id="depoimentos" aria-label="Depoimentos">
-      <h2>O que dizem nossos clientes</h2>
-
-      <div class="testimonials__grid">
-        <article class="tcard">
-          <p>“Entregaram no prazo e com documentação impecável. A obra fluiu sem retrabalho.”</p>
-          <div class="tcard__meta">
-            <strong>Cliente A</strong><span>• Residencial</span>
-          </div>
-        </article>
-
-        <article class="tcard">
-          <p>“Atendimento muito próximo. Explicaram as decisões técnicas e facilitaram tudo.”</p>
-          <div class="tcard__meta">
-            <strong>Cliente B</strong><span>• Retrofit</span>
-          </div>
-        </article>
-
-        <article class="tcard">
-          <p>“Compatibilização ajudou no cronograma. Excelente trabalho.”</p>
-          <div class="tcard__meta">
-            <strong>Cliente C</strong><span>• Comercial</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq reveal" id="faq" aria-label="Perguntas frequentes">
-      <h2>FAQ</h2>
-
-      <details class="faq__item">
-        <summary>Vocês emitem ART/RRT?</summary>
-        <p>Sim. Emitimos conforme o tipo de serviço e as exigências do conselho competente.</p>
-      </details>
-
-      <details class="faq__item">
-        <summary>Trabalham com BIM?</summary>
-        <p>Sim. Usamos BIM/modelagem quando agrega valor, reduz conflitos e melhora compatibilização.</p>
-      </details>
-
-      <details class="faq__item">
-        <summary>Quais prazos médios?</summary>
-        <p>Depende do escopo. Após o briefing, enviamos cronograma com marcos e checkpoints.</p>
-      </details>
-    </section>
-
-    <!-- QUEM SOMOS (seu texto original) -->
-    <section class="extra-content reveal" id="quem-somos">
+    <!-- QUEM SOMOS -->
+    <section class="extra-content" id="quem-somos">
       <h2>Quem somos</h2>
       <p>
         A RRios Engenharia atua com foco em qualidade, segurança e eficiência, desenvolvendo soluções técnicas
@@ -285,79 +139,11 @@
         para o ambiente construído.
       </p>
     </section>
-
-    <!-- CONTATO -->
-    <section class="contact reveal" id="contato" aria-label="Contato">
-      <div class="contact__grid">
-
-        <div>
-          <h2 style="font-weight:900; font-size:1.7rem;">Vamos conversar?</h2>
-          <p style="margin-top:10px; color: rgba(0,51,102,0.78); line-height:1.6;">
-            Conte o que você precisa e retornaremos o quanto antes.
-          </p>
-
-          <div class="contact__cards">
-            <div class="cinfo">
-              <div class="cinfo__icon" aria-hidden="true">📍</div>
-              <div>
-                <strong>Atendimento</strong>
-                <p style="margin-top:6px; color: rgba(0,51,102,0.74);">Brasil • Remoto e presencial</p>
-              </div>
-            </div>
-
-            <div class="cinfo">
-              <div class="cinfo__icon" aria-hidden="true">⏱️</div>
-              <div>
-                <strong>Horário</strong>
-                <p style="margin-top:6px; color: rgba(0,51,102,0.74);">Seg–Sex • 08:00–18:00</p>
-              </div>
-            </div>
-
-            <div class="cinfo">
-              <div class="cinfo__icon" aria-hidden="true">✉️</div>
-              <div>
-                <strong>E-mail</strong>
-                <p style="margin-top:6px; color: rgba(0,51,102,0.74);">contato@rriosengenharia.com</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <form class="contact__form" onsubmit="return false;" aria-label="Formulário de contato">
-          <label>
-            Nome
-            <input type="text" placeholder="Seu nome" required>
-          </label>
-
-          <label style="margin-top:12px;">
-            E-mail
-            <input type="email" placeholder="seuemail@exemplo.com" required>
-          </label>
-
-          <label style="margin-top:12px;">
-            Mensagem
-            <textarea rows="5" placeholder="Conte sobre o que você precisa..." required></textarea>
-          </label>
-
-          <button class="btn btn-primary" id="btnFakeSend" type="button" style="margin-top:12px; width:100%;">
-            Enviar
-          </button>
-
-          <p class="form-hint">*Demonstração. Integre com WhatsApp, Formspree ou backend depois.</p>
-        </form>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <p>© <span id="year"></span> RRios Engenharia • Todos os direitos reservados.</p>
-    </footer>
-
   </main>
 
-  <!-- MODAL DETALHES DO PROJETO (mantido) -->
+  <!-- MODAL DETALHES DO PROJETO (destaques) -->
   <aside class="project-modal" id="projectModal" aria-hidden="true">
     <div class="project-modal__panel" role="dialog" aria-modal="true" aria-label="Detalhes do projeto">
-
       <div class="project-modal__top">
         <div class="project-modal__topText">
           <span class="pm-tag" id="pmTag"></span>
@@ -370,7 +156,6 @@
 
       <div class="project-modal__body">
         <div class="pm-gallery">
-          <!-- imagem continua vindo do seu JS (src setado no script) -->
           <img class="pm-hero" id="pmHero" alt="">
           <div class="pm-thumbs" id="pmThumbs"></div>
         </div>
@@ -386,15 +171,8 @@
           </div>
         </div>
       </div>
-
     </div>
   </aside>
-
-  <!-- Floating Buttons (se seu JS usar) -->
-  <a class="fab fab-wa" href="https://wa.me/5500000000000" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
-    💬
-  </a>
-  <button class="fab fab-top" id="btnTop" type="button" aria-label="Voltar ao topo">↑</button>
 
   <script src="script.js"></script>
 </body>
